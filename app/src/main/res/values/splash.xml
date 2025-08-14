@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SplashScreen.TodoApp" parent="Theme.SplashScreen.IconBackground">
+        <item name="windowSplashScreenBackground">#65bfe0</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/do_track</item>
+        <item name="windowSplashScreenIconBackgroundColor">#FFFFFF</item>
+        <item name="postSplashScreenTheme">@style/Theme.TodoApp</item>
+    </style>
+</resources>
