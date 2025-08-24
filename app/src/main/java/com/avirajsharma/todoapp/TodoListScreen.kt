@@ -3,9 +3,7 @@ package com.avirajsharma.todoapp
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,7 +23,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.StickyNote2
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Assignment
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -109,9 +109,11 @@ fun TodoListScreen(
                     Box(
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(
-                            text = "📝",
-                            style = MaterialTheme.typography.headlineMedium
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.StickyNote2,
+                            contentDescription = "Edit Icon",
+                            modifier = Modifier.size(32.dp),
+                            tint = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -226,10 +228,13 @@ fun TodoListScreen(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.padding(bottom = 16.dp)
                     ) {
-                        Text(
-                            text = "📋",
-                            style = MaterialTheme.typography.headlineMedium,
-                            modifier = Modifier.padding(end = 8.dp)
+                        Icon(
+                            imageVector = Icons.Default.Assignment,
+                            contentDescription = "Recent Tasks Icon",
+                            modifier = Modifier
+                                .size(28.dp)
+                                .padding(end = 8.dp),
+                            tint = MaterialTheme.colorScheme.primary
                         )
                         Text(
                             text = "Recent Tasks",
@@ -238,6 +243,7 @@ fun TodoListScreen(
                             color = MaterialTheme.colorScheme.onBackground
                         )
                     }
+
 
                     LazyColumn(
                         verticalArrangement = Arrangement.spacedBy(12.dp),
